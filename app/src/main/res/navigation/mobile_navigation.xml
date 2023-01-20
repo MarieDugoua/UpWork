@@ -16,6 +16,7 @@
         android:name="com.ynov.upwork.ui.listEmployee.ListEmployeeFragment"
         android:label="@string/stats"
         tools:layout="@layout/fragment_list_employee" />
+
     <fragment
         android:id="@+id/navigation_employee"
         android:name="com.ynov.upwork.ui.employee.EmployeeFragment"

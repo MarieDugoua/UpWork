@@ -40,22 +40,22 @@
                 android:padding="4dp">
 
                 <ImageView
-                    android:id="@+id/green_circle"
+                    android:id="@+id/greenCircle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_green_circle_24"
                     android:visibility="visible"/>
                 <ImageView
-                    android:id="@+id/red_circle"
+                    android:id="@+id/redCircle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_red_circle_24"
                     android:visibility="gone"/>
                 <TextView
-                    android:id="@+id/employee_name"
+                    android:id="@+id/employeeName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name"
+                    android:text="@string/name"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:textColor="#000000"
                     android:textSize="16sp"
