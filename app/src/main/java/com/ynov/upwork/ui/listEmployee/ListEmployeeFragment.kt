@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ynov.upwork.R
 import com.ynov.upwork.listUtils.ListEmployeesAdapter
 import com.ynov.upwork.model.Employee
+import com.ynov.upwork.utils.ApiUtils
 
 class ListEmployeeFragment : Fragment() {
 
@@ -40,6 +41,7 @@ class ListEmployeeFragment : Fragment() {
                 adapter = ListEmployeesAdapter(employees)
             }
         }
+        ApiUtils.get()
         return view
     }
 
