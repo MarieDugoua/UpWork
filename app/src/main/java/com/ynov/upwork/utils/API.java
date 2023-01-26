@@ -11,7 +11,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class API {
-    public static final String BASE_URL = "http://172.20.10.3:3000/api";
+    public static final String BASE_URL = "http://192.168.1.20:3000/api";
 
 
     private static API sAPI;

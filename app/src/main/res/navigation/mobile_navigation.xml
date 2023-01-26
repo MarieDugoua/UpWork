@@ -8,19 +8,39 @@
     <fragment
         android:id="@+id/navigation_stats"
         android:name="com.ynov.upwork.ui.stats.StatsFragment"
-        android:label="@string/list"
-        tools:layout="@layout/fragment_stats" />
+        android:label="@string/stats"
+        tools:layout="@layout/fragment_stats" >
+
+
+        <action
+            android:id="@+id/action_navigation_stats_to_navigation_list_employee2"
+            app:destination="@id/navigation_list_employee" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_list_employee"
         android:name="com.ynov.upwork.ui.listEmployee.ListEmployeeFragment"
-        android:label="@string/stats"
-        tools:layout="@layout/fragment_list_employee" />
+        android:label="@string/list"
+        tools:layout="@layout/fragment_list_employee" >
+
+        <action
+            android:id="@+id/action_navigation_list_employee_to_navigation_stats"
+            app:destination="@id/navigation_stats" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_employee"
         android:name="com.ynov.upwork.ui.employee.EmployeeFragment"
         android:label="@string/employee"
-        tools:layout="@layout/fragment_employee" />
+        tools:layout="@layout/fragment_employee" >
+
+
+        <action
+            android:id="@+id/action_navigation_employee_to_navigation_stats"
+            app:destination="@id/navigation_stats" />
+        <action
+            android:id="@+id/action_navigation_employee_to_navigation_list_employee"
+            app:destination="@id/navigation_list_employee" />
+    </fragment>
 
 </navigation>

@@ -9,7 +9,10 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
         tools:ignore="MissingConstraints">
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,11 +40,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout
-                    android:id="@+id/btn_hours"
+                    android:id="@+id/layout_hours"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_margin="5dp"
+                    android:padding="15dp"
+                    android:background="@drawable/background_stats"
+                    android:elevation="10dp"
                     tools:ignore="MissingConstraints">
                     <ImageView
                         android:id="@+id/img_hours"
@@ -69,11 +75,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
-                        android:id="@+id/btn_employee"
+                        android:id="@+id/layout_employee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_margin="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:background="@drawable/background_stats"
+                        android:elevation="10dp"
                         tools:ignore="MissingConstraints">
                         <ImageView
                             android:id="@+id/img_employee"
@@ -90,11 +100,15 @@
                             android:paddingTop="10dp"/>
                     </LinearLayout>
                     <LinearLayout
-                        android:id="@+id/btn_stats"
+                        android:id="@+id/layout_stats"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_margin="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="12dp"
+                        android:background="@drawable/background_stats"
+                        android:elevation="10dp"
                         tools:ignore="MissingConstraints">
                         <ImageView
                             android:id="@+id/img_stats"
@@ -116,11 +130,15 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp">
                     <LinearLayout
-                        android:id="@+id/btn_vacation"
+                        android:id="@+id/layout_vacation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_margin="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:background="@drawable/background_stats"
+                        android:elevation="10dp"
                         tools:ignore="MissingConstraints">
                         <ImageView
                             android:id="@+id/img_vacation"
@@ -137,11 +155,15 @@
                             android:paddingTop="10dp"/>
                     </LinearLayout>
                     <LinearLayout
-                        android:id="@+id/btn_hours_employee"
+                        android:id="@+id/layout_hours_employee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_margin="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="12dp"
+                        android:background="@drawable/background_stats"
+                        android:elevation="10dp"
                         tools:ignore="MissingConstraints">
                         <ImageView
                             android:id="@+id/img_hours_employee"
