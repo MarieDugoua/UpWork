@@ -41,6 +41,7 @@ class ListEmployeeFragment : Fragment() {
                 adapter = ListEmployeesAdapter(employees)
             }
         }
+
         ApiUtils.get()
         return view
     }

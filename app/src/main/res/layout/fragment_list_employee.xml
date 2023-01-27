@@ -27,55 +27,15 @@
                 android:textSize="30dp"
                 android:textColor="@color/black"></TextView>
         </LinearLayout>
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:stretchColumns="2"
-                android:background="@drawable/background_list_employee"
-                tools:ignore="MissingConstraints">
-                <TableRow
-                    android:id="@+id/row_employee"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <ImageView
-                        android:id="@+id/greenCircle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_green_circle_24"
-                        android:visibility="visible"/>
-                    <ImageView
-                        android:id="@+id/redCircle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_red_circle_24"
-                        android:visibility="gone"/>
-                    <TextView
-                        android:id="@+id/employeeName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/name"
-                        android:textAppearance="?attr/textAppearanceListItem"
-                        android:textColor="#000000"
-                        android:textSize="16sp"
-                        android:paddingStart="15dp"/>
-
-                    <ImageView
-                        android:id="@+id/arrow"
-                        android:clickable="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
-                </TableRow>
-            </TableLayout>
-        </ScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:name="com.ynov.upwork.ui.listEmployee.ListEmployeeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".MainActivity"
+            tools:listitem="@layout/employee_item" />
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

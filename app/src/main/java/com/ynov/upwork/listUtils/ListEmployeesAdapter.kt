@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 
-import com.ynov.upwork.databinding.FragmentListEmployeeBinding
+import com.ynov.upwork.databinding.EmployeeItemBinding
 import com.ynov.upwork.model.Employee
 
 class ListEmployeesAdapter (
@@ -14,14 +14,12 @@ class ListEmployeesAdapter (
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            FragmentListEmployeeBinding.inflate(
+            EmployeeItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
         )
-
-
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -31,7 +29,7 @@ class ListEmployeesAdapter (
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: FragmentListEmployeeBinding) :
+    inner class ViewHolder(binding: EmployeeItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val nameView: TextView = binding.employeeName
 
