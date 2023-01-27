@@ -2,40 +2,48 @@ package com.ynov.upwork.listUtils
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.ynov.upwork.R
 
 import com.ynov.upwork.databinding.EmployeeItemBinding
 import com.ynov.upwork.model.Employee
 
-class ListEmployeesAdapter (
-    private val values: List<Employee>
-) : RecyclerView.Adapter<ListEmployeesAdapter.ViewHolder>() {
+class ListEmployeesAdapter(private val dataSet: ArrayList<Employee>) :
+    RecyclerView.Adapter<ListEmployeesAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            EmployeeItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        )
-    }
+    /**
+     * Provide a reference to the type of views that you are using
+     * (custom ViewHolder)
+     */
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val textView: TextView
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val employee = values[position]
-        holder.nameView.text = employee.name
-    }
-
-    override fun getItemCount(): Int = values.size
-
-    inner class ViewHolder(binding: EmployeeItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        val nameView: TextView = binding.employeeName
-
-        override fun toString(): String {
-            return super.toString() + " '" + nameView.text + "'"
+        init {
+            // Define click listener for the ViewHolder's View
+            textView = view.findViewById(R.id.employeeName)
         }
     }
+
+    // Create new views (invoked by the layout manager)
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+        // Create a new view, which defines the UI of the list item
+        val view = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.employee_item, viewGroup, false)
+
+        return ViewHolder(view)
+    }
+
+    // Replace the contents of a view (invoked by the layout manager)
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+
+        // Get element from your dataset at this position and replace the
+        // contents of the view with that element
+        viewHolder.textView.text = dataSet[position].name
+    }
+
+    // Return the size of your dataset (invoked by the layout manager)
+    override fun getItemCount() = dataSet.size
 
 }

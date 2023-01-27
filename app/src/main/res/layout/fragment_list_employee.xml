@@ -29,13 +29,11 @@
         </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"
-            android:name="com.ynov.upwork.ui.listEmployee.ListEmployeeFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             app:layoutManager="LinearLayoutManager"
-            tools:context=".MainActivity"
             tools:listitem="@layout/employee_item" />
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

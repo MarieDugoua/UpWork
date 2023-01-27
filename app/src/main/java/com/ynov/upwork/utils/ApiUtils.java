@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class ApiUtils {
 
-    public static void get() {
+    public static void get(ApiCallBack callBack) {
         new Thread(() -> {
             ArrayList<Employee> employees = new ArrayList<>();
             JSONArray array;
@@ -25,6 +25,7 @@ public class ApiUtils {
                 array = new JSONArray(api.getEmployees());
             } catch (Exception e) {
                 e.printStackTrace();
+                callBack.onError();
                 return;
             }
             for (int i = 0; i < array.length(); i++) {
@@ -35,6 +36,7 @@ public class ApiUtils {
                 }
             }
             Log.d("ApiUtils::get", employees.toString());
+            callBack.onSuccess(employees);
         }).start();
     }
 
