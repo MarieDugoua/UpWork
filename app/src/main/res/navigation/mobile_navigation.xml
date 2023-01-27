@@ -30,8 +30,8 @@
 
     <fragment
         android:id="@+id/navigation_employee"
-        android:name="com.ynov.upwork.ui.employee.EmployeeFragment"
-        android:label="@string/employee"
+        android:name="com.ynov.upwork.ui.listEmployee.EmployeeFragment"
+        android:label="@string/listEmployee"
         tools:layout="@layout/fragment_employee" >
 
 

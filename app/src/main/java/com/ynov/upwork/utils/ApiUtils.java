@@ -3,22 +3,18 @@ package com.ynov.upwork.utils;
 import android.util.Log;
 
 import com.ynov.upwork.model.Employee;
-import com.ynov.upwork.model.Record;
+import com.ynov.upwork.model.ListEmployee;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ApiUtils {
 
     public static void get(ApiCallBack callBack) {
         new Thread(() -> {
-            ArrayList<Employee> employees = new ArrayList<>();
+            ArrayList<ListEmployee> listEmployees = new ArrayList<>();
             JSONArray array;
             API api = API.getInstance();
             try {
@@ -30,13 +26,13 @@ public class ApiUtils {
             }
             for (int i = 0; i < array.length(); i++) {
                 try {
-                    employees.add(Employee.fromJson(array.getJSONObject(i)));
+                    listEmployees.add(ListEmployee.fromJson(array.getJSONObject(i)));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-            Log.d("ApiUtils::get", employees.toString());
-            callBack.onSuccess(employees);
+            Log.d("ApiUtils::get", listEmployees.toString());
+            callBack.onSuccess(listEmployees);
         }).start();
     }
 

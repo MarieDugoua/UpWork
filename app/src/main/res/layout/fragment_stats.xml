@@ -62,6 +62,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="Do stuff"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
                         android:paddingStart="50dp"/>
                 </LinearLayout>
             </TableRow>
@@ -81,7 +83,7 @@
                         android:orientation="vertical"
                         android:layout_margin="5dp"
                         android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
+                        android:paddingBottom="12dp"
                         android:background="@drawable/background_stats"
                         android:elevation="10dp"
                         tools:ignore="MissingConstraints">
@@ -90,14 +92,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:src="@drawable/employee" />
+                            android:src="@drawable/stats" />
                         <TextView
                             android:id="@+id/text_employee"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Do stuff"
-                            android:paddingTop="10dp"/>
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:paddingTop="15dp"/>
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/layout_stats"
@@ -122,6 +126,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Do stuff"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
                             android:paddingTop="15dp"/>
                     </LinearLayout>
                 </TableRow>
@@ -152,6 +158,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Do stuff"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
                             android:paddingTop="10dp"/>
                     </LinearLayout>
                     <LinearLayout
@@ -176,6 +184,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Do stuff"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
                             android:paddingTop="15dp"/>
                     </LinearLayout>
                 </TableRow>

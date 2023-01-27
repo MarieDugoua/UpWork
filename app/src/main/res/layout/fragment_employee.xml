@@ -11,15 +11,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
             tools:ignore="MissingConstraints">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                tools:ignore="MissingConstraints">
+                tools:ignore="MissingConstraints"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp">
                 <ImageView
                     android:id="@+id/arrow"
                     android:clickable="true"
@@ -39,6 +38,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -111,7 +112,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -123,15 +126,20 @@
             </LinearLayout>
             <ScrollView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/background_scrollview_grey">
                 <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="20dp"
                 android:stretchColumns="0,1"
-                android:background="@drawable/background_resumed_green"
-                tools:ignore="MissingConstraints">
+                android:background="@drawable/background_resumed_white"
+                tools:ignore="MissingConstraints"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp">
                 <TableRow
                     android:id="@+id/row_employee_resume"
                     android:layout_width="match_parent"

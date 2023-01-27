@@ -4,16 +4,15 @@
     <string name="stats">Statistiques</string>
     <string name="notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="employee">Employé</string>
-    <string name="name">Name</string>
-    <string name="list_employee_tilte">List employee :</string>
-    <string name="date">date</string>
-    <string name="hour">hour</string>
-    <string name="worked">worked</string>
-    <string name="credit">credit</string>
-    <string name="arrived">arrived</string>
-    <string name="gone">gone</string>
-    <string name="today">Today :</string>
-    <string name="resumed">resumed :</string>
+    <string name="listEmployee">Employé</string>
+    <string name="name">Nom</string>
+    <string name="list_employee_title">Upwork</string>
+    <string name="date">Date</string>
+    <string name="hour">Heures</string>
+    <string name="worked">Travaillées</string>
+    <string name="credit">Crédit</string>
+    <string name="arrived">Arrivée</string>
+    <string name="gone">Départ</string>
+    <string name="today">Aujourd\'hui</string>
+    <string name="resumed">Résumé</string>
 </resources>

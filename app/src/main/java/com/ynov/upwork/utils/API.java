@@ -55,4 +55,24 @@ public class API {
             return null;
         }
     }
+
+    public String getEmployeeById(Integer id) throws IOException {
+        Response listResponse = getSynchronous("/employee/:id");
+
+        if (HttpsURLConnection.HTTP_OK == listResponse.code()) {
+            return listResponse.body().string();
+        } else {
+            return null;
+        }
+    }
+
+    public String getSats() throws IOException {
+        Response listResponse = getSynchronous("/statistics");
+
+        if (HttpsURLConnection.HTTP_OK == listResponse.code()) {
+            return listResponse.body().string();
+        } else {
+            return null;
+        }
+    }
 }

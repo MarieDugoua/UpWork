@@ -11,7 +11,7 @@ import com.ynov.upwork.R
 class EmployeeFragment : Fragment() {
 
     companion object {
-        fun newInstance() = EmployeeFragment()
+
     }
 
 

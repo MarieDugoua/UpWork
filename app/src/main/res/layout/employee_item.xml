@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:stretchColumns="2"
         tools:ignore="MissingConstraints">
         <TableRow
             android:id="@+id/rowEmployee"
@@ -19,14 +20,8 @@
                 android:id="@+id/greenCircle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_green_circle_24"
-                android:visibility="visible"/>
-            <ImageView
-                android:id="@+id/redCircle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_red_circle_24"
-                android:visibility="gone"/>
+                android:src="@drawable/ic_baseline_green_circle_24" />
+
             <TextView
                 android:id="@+id/employeeName"
                 android:layout_width="wrap_content"
@@ -39,9 +34,12 @@
 
             <ImageView
                 android:id="@+id/arrow"
+                android:layout_gravity="end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceListItem"
                 android:clickable="true"
+                android:paddingEnd="20dp"
                 android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
         </TableRow>
     </TableLayout>
