@@ -1,14 +1,17 @@
 package com.ynov.upwork.ui.listEmployee
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.ynov.upwork.R
 import com.ynov.upwork.listUtils.ListEmployeesAdapter
 import com.ynov.upwork.model.ListEmployee
+import com.ynov.upwork.ui.employee.EmployeeFragment
 import com.ynov.upwork.utils.ApiCallBackEmployee
 import com.ynov.upwork.utils.ApiUtils
 
@@ -22,6 +25,12 @@ class ListEmployeeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val backButton = requireActivity().findViewById<ImageView>(R.id.arrow)
+
+        backButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
         }
@@ -34,7 +43,11 @@ class ListEmployeeFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_list_employee, container, false)
         recyclerView = view.findViewById(R.id.list)
-        adapter = ListEmployeesAdapter(listEmployees)
+        adapter = ListEmployeesAdapter(listEmployees){
+            val intent = Intent(requireActivity(), EmployeeFragment::class.java)
+            intent.putExtra("id", it)
+            startActivity(intent)
+        }
 
         // Set the adapter
         recyclerView.adapter = this.adapter

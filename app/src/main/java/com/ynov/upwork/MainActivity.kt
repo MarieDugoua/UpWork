@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_list_employee -> {
-                        replaceCurrentFragment(listEmployee)
+                    replaceCurrentFragment(listEmployee)
                     return@setOnItemSelectedListener true
                 }
                 R.id.navigation_stats -> {
-                        replaceCurrentFragment(stats)
+                    replaceCurrentFragment(stats)
                     return@setOnItemSelectedListener true
                 }
             }

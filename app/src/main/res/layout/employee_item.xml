@@ -33,7 +33,7 @@
                 android:paddingStart="15dp"/>
 
             <ImageView
-                android:id="@+id/arrow"
+                android:id="@+id/arrowEmployee"
                 android:layout_gravity="end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
