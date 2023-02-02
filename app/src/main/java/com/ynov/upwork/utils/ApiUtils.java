@@ -61,7 +61,7 @@ public class ApiUtils {
             try {
                 JSONObject object = new JSONObject(api.getSats());
                 Log.d("ApiUtils::getStats", object.toString());
-                callBack.onSuccess(Stats.fromJson(object));
+                callBack.onSuccess(object);
             } catch (Exception e) {
                 e.printStackTrace();
                 callBack.onError();

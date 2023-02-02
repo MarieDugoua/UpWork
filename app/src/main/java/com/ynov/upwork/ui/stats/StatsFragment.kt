@@ -14,7 +14,7 @@ import com.ynov.upwork.utils.ApiUtils
 
 class StatsFragment : Fragment() {
 
-    private var stats = ArrayList<Stats>()
+    private var stats = Stats()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +28,9 @@ class StatsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_stats, container, false)
 
         ApiUtils.getStats(object : ApiCallBackStats {
-            override fun onSuccess(stats : ArrayList<Stats>) {
+            override fun onSuccess(stats : Stats) {
                 requireActivity().runOnUiThread{
-                    this@StatsFragment.stats.addAll(stats)
+                    this@StatsFragment.stats = stats
                     displayData()
                 }
             }
@@ -43,32 +43,31 @@ class StatsFragment : Fragment() {
     }
 
     fun displayData(){
-
         val hour = requireActivity().findViewById<TextView>(R.id.text_hours)
         val employee = requireActivity().findViewById<TextView>(R.id.text_employee)
         val stat = requireActivity().findViewById<TextView>(R.id.text_stats)
         val vacation = requireActivity().findViewById<TextView>(R.id.text_vacation)
         val average = requireActivity().findViewById<TextView>(R.id.text_average)
 
-        if(stats[0].workHours.toString() == null){
+        if(stats.workHours.toString() == null){
             hour.text = "0"
         } else {
-            hour.text = stats[0].workHours.toString()
+            hour.text = stats.workHours.toString()
         }
-        if(stats[1].numberOfEmployees.toString() == null){
+        if(stats.numberOfEmployees.toString() == null){
             vacation.text = "0"
         } else {
-            vacation.text = stats[1].numberOfEmployees.toString()
+            vacation.text = stats.numberOfEmployees.toString()
         }
-        if(stats[2].averageWorkedHoursByEmployee.toString() == null){
+        if(stats.averageWorkedHoursByEmployee.toString() == null){
             average.text = "0"
         } else {
-            average.text = stats[2].averageWorkedHoursByEmployee.toString()
+            average.text = stats.averageWorkedHoursByEmployee.toString()
         }
-        if(stats[3].hoursWorkedByDay.toString() == null){
+        if(stats.hoursWorkedByDay.toString() == null){
             employee.text = "0"
         } else {
-            employee.text = stats[3].hoursWorkedByDay.toString()
+            employee.text = stats.hoursWorkedByDay.toString()
         }
 
     }
