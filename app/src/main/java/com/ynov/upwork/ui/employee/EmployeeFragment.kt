@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.ynov.upwork.R
 import com.ynov.upwork.model.Employee
+import com.ynov.upwork.model.Stats
 import com.ynov.upwork.ui.listEmployee.ListEmployeeFragment
 import com.ynov.upwork.utils.ApiCallBackEmployeeById
+import com.ynov.upwork.utils.ApiCallBackStats
 import com.ynov.upwork.utils.ApiUtils
 
 class EmployeeFragment : Fragment() {
@@ -32,13 +34,14 @@ class EmployeeFragment : Fragment() {
 
         val view =  inflater.inflate(R.layout.fragment_employee, container, false)
 
-        ApiCallBackEmployeeById(this.employee, object : ApiCallBackEmployeeById {
+        ApiUtils.getEmployeeById(object : ApiCallBackEmployeeById {
             override fun onSuccess(employee : ArrayList<Employee>) {
                 requireActivity().runOnUiThread{
                     this@EmployeeFragment.employee.addAll(employee)
                 }
-                override fun onError() {
-                }
+            }
+            override fun onError() {
+
             }
         })
 
