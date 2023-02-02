@@ -6,19 +6,39 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ynov.upwork.R
+import com.ynov.upwork.model.Stats
+import com.ynov.upwork.utils.ApiCallBackStats
+import com.ynov.upwork.utils.ApiUtils
 
 class StatsFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = StatsFragment()
-    }
+    private var columnCount = 1
+    private var stats = ArrayList<Stats>()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_stats, container, false)
+        val view = inflater.inflate(R.layout.fragment_stats, container, false)
+
+        ApiUtils.getStats(object : ApiCallBackStats {
+            override fun onSuccess(stats : ArrayList<Stats>) {
+                requireActivity().runOnUiThread{
+                    this@StatsFragment.stats.addAll(stats)
+                }
+            }
+            override fun onError() {
+
+            }
+        })
+
+        return view
+    }
+
+    companion object {
+
+        const val ARG_COLUMN_COUNT = "column-count"
     }
 
 }

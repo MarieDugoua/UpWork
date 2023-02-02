@@ -4,7 +4,7 @@ import com.ynov.upwork.model.ListEmployee;
 
 import java.util.ArrayList;
 
-public interface ApiCallBack {
+public interface ApiCallBackEmployee {
     void onSuccess(ArrayList<ListEmployee> listEmployees);
     void onError();
 }

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ynov.upwork.R
 import com.ynov.upwork.listUtils.ListEmployeesAdapter
 import com.ynov.upwork.model.ListEmployee
-import com.ynov.upwork.utils.ApiCallBack
+import com.ynov.upwork.utils.ApiCallBackEmployee
 import com.ynov.upwork.utils.ApiUtils
 
 class ListEmployeeFragment : Fragment() {
@@ -39,7 +39,7 @@ class ListEmployeeFragment : Fragment() {
         // Set the adapter
         recyclerView.adapter = this.adapter
 
-        ApiUtils.get(object : ApiCallBack {
+        ApiUtils.getEmployees(object : ApiCallBackEmployee {
             override fun onSuccess(listEmployees : ArrayList<ListEmployee>) {
                 requireActivity().runOnUiThread{
                     this@ListEmployeeFragment.listEmployees.addAll(listEmployees)
