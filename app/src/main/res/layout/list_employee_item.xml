@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <TableLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -15,29 +15,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
+
         <TableRow
-            android:id="@+id/row_employee_resume"
+            android:id="@+id/rowEmployee"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="10dp">
-            <TextView
-                android:id="@+id/date"
-                android:gravity="start"
+
+            <ImageView
+                android:id="@+id/greenCircle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/date"
+                android:src="@drawable/ic_baseline_green_circle_24" />
+
+            <TextView
+                android:id="@+id/employeeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:text="@string/name"
+                android:textAppearance="?attr/textAppearanceListItem"
                 android:textColor="#000000"
                 android:textSize="16sp" />
-            <TextView
-                android:id="@+id/hour"
-                android:gravity="center"
+
+            <ImageView
+                android:id="@+id/arrowEmployee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hour"
-                android:textColor="#000000"
-                android:textSize="16sp"/>
-
+                android:layout_gravity="end"
+                android:clickable="true"
+                android:paddingEnd="20dp"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                android:textAppearance="?attr/textAppearanceListItem" />
         </TableRow>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

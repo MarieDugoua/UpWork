@@ -7,50 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".ui.employee.EmployeeFragment">
 
-        <TableLayout
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
-            tools:ignore="MissingConstraints">
-            <LinearLayout
-                android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+            <ImageView
+                android:id="@+id/arrow"
+                android:clickable="true"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                tools:ignore="MissingConstraints"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp">
-                <ImageView
-                    android:id="@+id/arrow"
-                    android:clickable="true"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_keyboard_arrow_left_24"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/name"
-                    android:layout_marginStart="10dp"
-                    android:textSize="30dp"
-                    android:textColor="@color/black"></TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+                android:src="@drawable/ic_baseline_keyboard_arrow_left_24"/>
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginTop="20dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/today"
-                    android:layout_marginStart="10dp"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"></TextView>
-            </LinearLayout>
-            <TableLayout
+                android:text="@string/name"
+                android:layout_marginStart="10dp"
+                android:textSize="30dp"
+                android:textColor="@color/black"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today"
+                android:layout_marginStart="10dp"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"></TextView>
+        </LinearLayout>
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -150,7 +150,7 @@
                     android:orientation="vertical"
                     android:background="@drawable/background_list_employee">
                     <TextView
-                        android:id="@+id/gone"
+                        android:id="@+id/leave"
                         android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -167,63 +167,34 @@
                 </LinearLayout>
             </TableRow>
         </TableLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/resumed"
-                    android:layout_marginStart="10dp"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"></TextView>
-            </LinearLayout>
-            <ScrollView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/background_scrollview_grey">
-                <TableLayout
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:stretchColumns="0,1"
-                android:background="@drawable/background_resumed_white"
-                tools:ignore="MissingConstraints"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="15dp">
-                <TableRow
-                    android:id="@+id/row_employee_resume"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:id="@+id/date"
-                        android:gravity="start"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/date"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
-                    <TextView
-                        android:id="@+id/hour"
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hour"
-                        android:textColor="#000000"
-                        android:textSize="16sp"/>
-
-                </TableRow>
-            </TableLayout>
-            </ScrollView>
+                android:text="@string/resumed"
+                android:layout_marginStart="10dp"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"></TextView>
+        </LinearLayout>
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_scrollview_grey"
+            android:layout_marginTop="20dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/employee_item" />
+        </TableLayout>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

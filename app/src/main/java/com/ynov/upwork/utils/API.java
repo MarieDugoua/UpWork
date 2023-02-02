@@ -11,7 +11,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class API {
-    public static final String BASE_URL = "http://192.168.65.197:3000/api";
+    public static final String BASE_URL = "http://192.168.1.112:3000/api";
 
 
     private static API sAPI;
@@ -56,8 +56,8 @@ public class API {
         }
     }
 
-    public String getEmployeeById(Integer id) throws IOException {
-        Response listResponse = getSynchronous("/employee/:id");
+    public String getEmployeeById(String id) throws IOException {
+        Response listResponse = getSynchronous("/employee/" + id);
 
         if (HttpsURLConnection.HTTP_OK == listResponse.code()) {
             return listResponse.body().string();

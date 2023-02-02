@@ -12,9 +12,9 @@ import java.util.Date;
 
 public class Stats {
     String workHours;
-    String numberOfEmployees;
-    String averageWorkedHoursByEmployee;
-    String hoursWorkedByDay;
+    Integer numberOfEmployees;
+    Integer averageWorkedHoursByEmployee;
+    Integer hoursWorkedByDay;
     ArrayList<Record> records;
 
     public Stats() {
@@ -23,9 +23,9 @@ public class Stats {
     public static Stats fromJson(JSONObject object) throws JSONException {
         Stats stats = new Stats();
         stats.setWorkHours(object.getString("workHours"));
-        stats.setNumberOfEmployees(object.getString("numberOfEmployees"));
-        stats.setAverageWorkedHoursByEmployee(object.getString("averageWorkedHoursByEmployee"));
-        stats.setHoursWorkedByDay(object.getString("hoursWorkedByDay"));
+        stats.setNumberOfEmployees(object.getInt("numberOfEmployees"));
+        stats.setAverageWorkedHoursByEmployee(object.getInt("averageWorkedHoursByEmployee"));
+        stats.setHoursWorkedByDay(object.getInt("hoursWorkedByDay"));
 
         JSONArray jsonArray = object.getJSONArray("records");
         ArrayList<Record> records = new ArrayList<>();
@@ -38,12 +38,12 @@ public class Stats {
         return stats;
     }
 
-    public String getHoursWorkedByDay() {return hoursWorkedByDay;}
-    public void setHoursWorkedByDay(String hoursWorkedByDay) {this.hoursWorkedByDay = hoursWorkedByDay;}
-    public String getAverageWorkedHoursByEmployee() {return averageWorkedHoursByEmployee;}
-    public void setAverageWorkedHoursByEmployee(String averageWorkedHoursByEmployee) {this.averageWorkedHoursByEmployee = averageWorkedHoursByEmployee;}
-    public String getNumberOfEmployees() {return numberOfEmployees;}
-    public void setNumberOfEmployees(String numberOfEmployees) {this.numberOfEmployees = numberOfEmployees;}
+    public Integer getHoursWorkedByDay() {return hoursWorkedByDay;}
+    public void setHoursWorkedByDay(Integer hoursWorkedByDay) {this.hoursWorkedByDay = hoursWorkedByDay;}
+    public Integer getAverageWorkedHoursByEmployee() {return averageWorkedHoursByEmployee;}
+    public void setAverageWorkedHoursByEmployee(Integer averageWorkedHoursByEmployee) {this.averageWorkedHoursByEmployee = averageWorkedHoursByEmployee;}
+    public Integer getNumberOfEmployees() {return numberOfEmployees;}
+    public void setNumberOfEmployees(Integer numberOfEmployees) {this.numberOfEmployees = numberOfEmployees;}
     public String getWorkHours() {return workHours;}
     public void setWorkHours(String workHours) {this.workHours = workHours;}
     public ArrayList<Record> getRecords() {return records;}

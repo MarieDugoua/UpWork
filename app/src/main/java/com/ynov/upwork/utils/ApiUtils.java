@@ -3,11 +3,13 @@ package com.ynov.upwork.utils;
 import android.util.Log;
 
 import com.ynov.upwork.model.Employee;
+import com.ynov.upwork.model.EmployeeResponseAPI;
 import com.ynov.upwork.model.ListEmployee;
 import com.ynov.upwork.model.Stats;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -37,51 +39,35 @@ public class ApiUtils {
         }).start();
     }
 
-    public static void getEmployeeById(ApiCallBackEmployeeById callBack, Integer id) {
+    public static void getEmployeeById(ApiCallBackEmployeeById callBack, String id) {
         new Thread(() -> {
-            ArrayList<Employee> employee = new ArrayList<>();
-            JSONArray array;
             API api = API.getInstance();
             try {
-                array = new JSONArray(api.getEmployeeById(id));
+                JSONObject object = new JSONObject(api.getEmployeeById(id));
+                EmployeeResponseAPI employeeResponseAPI = EmployeeResponseAPI.fromJson(object);
+
+                Log.d("ApiUtils::getEmployeeById", employeeResponseAPI.toString());
+                callBack.onSuccess(employeeResponseAPI);
             } catch (Exception e) {
                 e.printStackTrace();
                 callBack.onError();
-                return;
             }
-            for (int i = 0; i < array.length(); i++) {
-                try {
-                    employee.add(Employee.fromJson(array.getJSONObject(i)));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-            Log.d("ApiUtils::get", employee.toString());
-            callBack.onSuccess(employee);
         }).start();
     }
 
     public static void getStats(ApiCallBackStats callBack) {
         new Thread(() -> {
-            ArrayList<Stats> stats = new ArrayList<>();
-            JSONArray array;
             API api = API.getInstance();
             try {
-                array = new JSONArray(api.getEmployees());
+                JSONObject object = new JSONObject(api.getSats());
+                Log.d("ApiUtils::getStats", object.toString());
+                callBack.onSuccess(Stats.fromJson(object));
             } catch (Exception e) {
                 e.printStackTrace();
                 callBack.onError();
                 return;
             }
-            for (int i = 0; i < array.length(); i++) {
-                try {
-                    stats.add(Stats.fromJson(array.getJSONObject(i)));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-            Log.d("ApiUtils::get", stats.toString());
-            callBack.onSuccess(stats);
+
         }).start();
     }
 }

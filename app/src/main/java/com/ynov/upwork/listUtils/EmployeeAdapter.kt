@@ -4,29 +4,25 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import com.ynov.upwork.R
+import com.ynov.upwork.model.WorkedDays
 
-import com.ynov.upwork.model.ListEmployee
-
-class ListEmployeesAdapter(private val dataSet: ArrayList<ListEmployee>, private val listener: (String) -> Unit) :
-    RecyclerView.Adapter<ListEmployeesAdapter.ViewHolder>() {
+class EmployeeAdapter(private val dataSet: ArrayList<WorkedDays>) :
+    RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
 
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder)
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imageView: ImageView
-        val textView: TextView
-        val employeeButton: ImageView
+        val date: TextView
+        val hour: TextView
 
         init {
             // Define click listener for the ViewHolder's View
-            textView = view.findViewById(R.id.employeeName)
-            imageView = view.findViewById(R.id.greenCircle)
-            employeeButton = view.findViewById(R.id.arrowEmployee)
+            date = view.findViewById(R.id.date)
+            hour = view.findViewById(R.id.hour)
 
         }
     }
@@ -35,7 +31,7 @@ class ListEmployeesAdapter(private val dataSet: ArrayList<ListEmployee>, private
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.list_employee_item, viewGroup, false)
+            .inflate(R.layout.employee_item, viewGroup, false)
 
         return ViewHolder(view)
     }
@@ -45,17 +41,8 @@ class ListEmployeesAdapter(private val dataSet: ArrayList<ListEmployee>, private
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.textView.text = dataSet[position].name
-
-        viewHolder.employeeButton.setOnClickListener {
-            listener(dataSet[position].id)
-        }
-
-        if (dataSet[position].isWorking == true) {
-            viewHolder.imageView.setImageResource(R.drawable.ic_baseline_green_circle_24)
-        } else if (dataSet[position].isWorking == false) {
-            viewHolder.imageView.setImageResource(R.drawable.ic_baseline_red_circle_24)
-        }
+        viewHolder.date.text = dataSet[position].date
+        viewHolder.hour.text = dataSet[position].workedHours
 
     }
 
