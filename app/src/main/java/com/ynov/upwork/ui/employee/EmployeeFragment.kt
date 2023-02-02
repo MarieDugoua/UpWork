@@ -7,23 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import com.ynov.upwork.R
 import com.ynov.upwork.model.Employee
-import com.ynov.upwork.model.Stats
-import com.ynov.upwork.ui.listEmployee.ListEmployeeFragment
 import com.ynov.upwork.utils.ApiCallBackEmployeeById
-import com.ynov.upwork.utils.ApiCallBackStats
 import com.ynov.upwork.utils.ApiUtils
 
 class EmployeeFragment : Fragment() {
 
-    private var columnCount = 1
     private var employee = ArrayList<Employee>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        arguments?.let {
-            columnCount = it.getInt(ListEmployeeFragment.ARG_COLUMN_COUNT)
-        }
     }
 
 
@@ -46,12 +39,6 @@ class EmployeeFragment : Fragment() {
         })
 
         return view
-    }
-
-
-    companion object {
-
-        const val ARG_COLUMN_COUNT = "column-count"
     }
 
 }

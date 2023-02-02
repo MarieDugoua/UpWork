@@ -12,9 +12,12 @@ import com.ynov.upwork.utils.ApiUtils
 
 class StatsFragment : Fragment() {
 
-    private var columnCount = 1
     private var stats = ArrayList<Stats>()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,11 +37,6 @@ class StatsFragment : Fragment() {
         })
 
         return view
-    }
-
-    companion object {
-
-        const val ARG_COLUMN_COUNT = "column-count"
     }
 
 }
